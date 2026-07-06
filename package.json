@@ -1,0 +1,22 @@
+{
+  "name": "hzcd-flights",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm run icons && pnpm --parallel --filter @hzcd/bff --filter @hzcd/web dev",
+    "build": "pnpm run icons && pnpm -r build",
+    "test": "pnpm --filter @hzcd/strategy test",
+    "icons": "node scripts/generate-icons.mjs",
+    "vendor:holidays": "node scripts/vendor-holidays.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@hzcd/bff": "workspace:*"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.3",
+    "to-ico": "^1.1.5"
+  }
+}

@@ -1,0 +1,79 @@
+/* Home */
+.banner.card {
+  padding: 14px 16px;
+}
+
+.banner-line {
+  margin: 0 0 4px;
+  font-size: 15px;
+}
+
+.banner-minor {
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.route-card {
+  text-align: center;
+  padding: 20px 16px;
+}
+
+.route-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+}
+
+.city-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.city-name {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.city-code {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.route-arrow {
+  color: var(--text-secondary);
+  font-size: 20px;
+  padding-top: 4px;
+}
+
+.route-note {
+  margin: 12px 0 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.form-card {
+  padding: 16px;
+}
+
+.form-card .segmented {
+  margin-bottom: 16px;
+}
+
+.meta-card p {
+  margin: 0 0 4px;
+}
+
+/* Settings grouped */
+.settings-page .grouped-card .grouped-section p.muted {
+  margin: 0 0 12px;
+}
+
+.settings-page .theme-section {
+  padding: 12px 16px 16px;
+}
