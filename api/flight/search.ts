@@ -1,4 +1,4 @@
-import { searchFlight } from '@hzcd/bff/flight'
+import { searchFlight } from '../../lib/flight-search.ts'
 
 export const maxDuration = 30
 
