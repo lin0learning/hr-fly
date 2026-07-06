@@ -1,4 +1,4 @@
-import { searchFlight } from '../../lib/flight-search.ts'
+import { searchFlight } from '../../lib/flight-search'
 
 export const maxDuration = 30
 
