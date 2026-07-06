@@ -21,6 +21,9 @@ importers:
       to-ico:
         specifier: ^1.1.5
         version: 1.1.5
+      typescript:
+        specifier: ^5.8.2
+        version: 5.9.3
 
   apps/bff:
     dependencies:
