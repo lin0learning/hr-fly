@@ -8,3 +8,5 @@ coverage
 dev-dist
 .turbo
 .vercel
+lib/flyai-bundle.cjs
+.env*

@@ -1,18 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "pnpm run icons && pnpm --filter @hzcd/web build",
+  "buildCommand": "node scripts/vendor-flyai.mjs && pnpm run icons && pnpm --filter @hzcd/web build",
   "installCommand": "pnpm install",
   "outputDirectory": "apps/web/dist",
   "framework": null,
   "rewrites": [
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ],
-  "outputFileTracingIncludes": {
-    "/api/flight/search": [
-      "./node_modules/@fly-ai/flyai-cli/dist/**",
-      "./node_modules/.pnpm/@fly-ai+flyai-cli@*/node_modules/@fly-ai/flyai-cli/dist/**"
-    ]
-  },
   "functions": {
     "api/health.ts": {
       "includeFiles": "lib/flight-search.ts"
@@ -20,8 +14,7 @@
     "api/flight/search.ts": {
       "includeFiles": [
         "lib/flight-search.ts",
-        "node_modules/@fly-ai/flyai-cli/dist/**",
-        "node_modules/.pnpm/@fly-ai+flyai-cli@*/node_modules/@fly-ai/flyai-cli/dist/**"
+        "lib/flyai-bundle.cjs"
       ],
       "maxDuration": 30
     }

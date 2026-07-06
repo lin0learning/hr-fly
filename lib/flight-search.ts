@@ -1,14 +1,20 @@
 import { execFile } from 'node:child_process'
 import { createRequire } from 'node:module'
+import { existsSync } from 'node:fs'
 import { promisify } from 'node:util'
 import { dirname, join } from 'node:path'
+import { fileURLToPath } from 'node:url'
 
 const execFileAsync = promisify(execFile)
 const require = createRequire(import.meta.url)
+const libDir = dirname(fileURLToPath(import.meta.url))
 
 const FLYAI_KEY = process.env.FLYAI_API_KEY
 
 function resolveFlyaiScript(): string {
+  const vendored = join(libDir, 'flyai-bundle.cjs')
+  if (existsSync(vendored)) return vendored
+
   const pkgPath = require.resolve('@fly-ai/flyai-cli/package.json')
   const pkg = require(pkgPath) as { bin?: string | Record<string, string> }
   const binRel = typeof pkg.bin === 'string' ? pkg.bin : pkg.bin?.flyai
