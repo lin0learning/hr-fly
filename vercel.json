@@ -12,10 +12,7 @@
       "includeFiles": "lib/flight-search.ts"
     },
     "api/flight/search.ts": {
-      "includeFiles": [
-        "lib/flight-search.ts",
-        "lib/flyai-bundle.cjs"
-      ],
+      "includeFiles": "lib/**",
       "maxDuration": 30
     }
   }
