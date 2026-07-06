@@ -7,12 +7,22 @@
   "rewrites": [
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ],
+  "outputFileTracingIncludes": {
+    "/api/flight/search": [
+      "./node_modules/@fly-ai/flyai-cli/dist/**",
+      "./node_modules/.pnpm/@fly-ai+flyai-cli@*/node_modules/@fly-ai/flyai-cli/dist/**"
+    ]
+  },
   "functions": {
     "api/health.ts": {
       "includeFiles": "lib/flight-search.ts"
     },
     "api/flight/search.ts": {
-      "includeFiles": "lib/flight-search.ts",
+      "includeFiles": [
+        "lib/flight-search.ts",
+        "node_modules/@fly-ai/flyai-cli/dist/**",
+        "node_modules/.pnpm/@fly-ai+flyai-cli@*/node_modules/@fly-ai/flyai-cli/dist/**"
+      ],
       "maxDuration": 30
     }
   }
