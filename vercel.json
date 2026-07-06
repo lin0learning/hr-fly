@@ -8,8 +8,12 @@
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ],
   "functions": {
-    "api/**/*.ts": {
-      "includeFiles": "lib/**"
+    "api/health.ts": {
+      "includeFiles": "lib/flight-search.ts"
+    },
+    "api/flight/search.ts": {
+      "includeFiles": "lib/flight-search.ts",
+      "maxDuration": 30
     }
   }
 }
